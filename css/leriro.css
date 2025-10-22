@@ -1,0 +1,473 @@
+abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent
+}
+html {
+      scroll-behavior: smooth;
+    }
+body {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+p {
+    font-size: 0.9rem;
+}
+section {
+    margin-bottom: 60px;
+}
+.sp-only {
+    display: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10%;
+}
+
+.header-left {
+    text-align: center;
+    width:  15%;
+}
+.header-left h1 {
+    color: gray;
+    font-size: 0.7rem;
+}
+.header-left img {
+    width: 60%;
+}
+.header-right {
+    width: 80%;
+}
+.header-right nav ul{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.header-right nav ul li {
+    font-size: 0.85rem;
+}
+.header-right nav ul li span {
+    color: #ea5514;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.mainvisual {
+    height: 80vh;
+    background-image: url("../img/cp/leriro/main1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+.mainvisual img {
+    width: 60%;
+    height: auto;
+}
+
+/* ハンバーガーボタン（PC時は非表示） */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s;
+}
+/* ハンバーガーメニューが開いている時のアニメーション */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+/* Contents */
+.container {
+    width: 60vw;
+    margin: 0 auto;
+}
+.section-title {
+    position: relative;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-left: .5em;
+}
+.section-title:before {
+    position:absolute;
+    background-color: #ea5514;
+    border-radius: 1em;
+    content: "";
+    left: 0%;
+    top: 5%;
+    bottom: 10%;
+    width: .3em;
+    height: 90%;
+}
+.section-title span {
+    color: #ea5514;
+    font-size: 0.6rem;
+    font-weight: bold;
+    display: block;
+    margin-top: -2px;
+    margin-bottom: 8px;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+table tr {
+    background-color: #fff;
+    border: 1px solid #bbb;
+    padding: .35rem;
+}
+table th, table td {
+    padding: .5rem 10px .5rem 1rem;
+    border-right: 1px solid #bbb;
+    vertical-align: middle;
+}
+table th {
+    color: white;
+    font-size: .85rem;
+}
+table thead tr{
+    background: #6d6d9e;
+    background: linear-gradient(92deg,rgba(109, 109, 158, 1) 0%, rgba(62, 73, 168, 1) 32%, rgba(0, 14, 166, 1) 100%);
+    
+}
+.contents1-inner2 table {
+    text-align: center;
+}
+
+.contents1 h2 {
+    margin: 15px 0;
+}
+.contents1-inner1 {
+    margin-bottom: 20px;
+}
+
+/* カード */
+.contents2-inner1, .contents3-inner1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+}
+.card-user {
+    height: 150px;
+    width: 150px;
+}
+.card-user img {
+    width: 100%;
+    height: auto;
+}
+.card-orner {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.card-orner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* hover時の対応 */
+.card-orner {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-orner img {
+    display: block;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+
+.card-orner:hover img {
+    opacity: 0.3;
+}
+
+.card-orner::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    font-size: 0.7rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    white-space: normal;
+    max-width: 90%;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.card-orner:hover::after {
+    opacity: 1;
+}
+
+/* 会社情報 */
+.contents4-inner1 {
+    margin-bottom: 40px;
+}
+.contents4-inner1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item {
+    width: 45%;
+    text-align: center;
+}
+.item p {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+.item a {
+    display: inline-block;
+    font-size: 0.85rem;
+    width: 80%;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.contents4-inner2 {
+    margin: 0 auto;
+    width:75%;
+    margin-bottom: 20px;
+}
+.contents4-inner2 h2 {
+    font-size: 0.9rem;
+    text-align: center;
+}
+.company-logo {
+    text-align: center;
+    height: 60px;
+    margin: 8px 0;
+}
+.company-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.clearFix {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+.clearFix dt {
+    width: 30%;
+}
+.clearFix dd {
+    border-bottom: 1px dotted #bbb;
+    width: 70%;
+}
+
+
+/* お問合せ */
+.contents5 {
+    width: 100vw;
+    height:30vh;
+    text-align: center;
+    padding: 8px 0;
+
+    background-image: url("../img/cp/leriro/main2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 60%;
+}
+.contact-text {
+    margin: 20px 0;
+}
+.contact-text a{
+    color: white;
+    font-weight: bold;
+    border: 1px dotted white;
+    border-radius: 4%;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* フッター */
+footer {
+    background-color: #004ea2;
+    color: white;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+.footer-left {
+    width: 30%;
+}
+.footer-right {
+    width: 65%;
+}
+.footer-right ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3vw;
+    }
+.footer-right ul li a {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .pc-only {
+        display: none;
+    }
+    .sp-only {
+        display: block;
+    }
+
+    .header-left h1 {
+        display: none;
+    }
+    .header-logo {
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    .header-right {
+        position: fixed;
+        top: 0;
+        right: -100%; /* 初期位置は画面外 */
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #fff;
+        transition: right 0.3s;
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    /* メニューが開いている時 */
+    .header-right.active {
+        right: 0;
+    }
+    .nav ul {
+        flex-direction: column;
+        padding: 80px 20px 20px;
+    }
+    .nav ul li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+    .nav ul li a {
+        display: block;
+        padding: 15px 0;
+    }
+
+    .container {
+        width: 90vw;
+    }
+    .section-title {
+        font-size: 1.0rem;
+    }
+    .mainvisual {
+        height: 50vh;
+    }
+
+    table th, table td {
+        font-size: 0.8rem;
+    }
+
+    .contents4-inner1 {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .item {
+        width: 100%;
+    }
+
+    /* カード */
+    .contents2-inner1, .contents3-inner2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    /* 会社情報 */
+    .clearFix {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .clearFix dt {
+        width: 100%;
+        font-weight: bold;
+        margin-top: 4px;
+    }
+    .clearFix dd {
+        width: 100%;
+    }
+
+    footer {
+        padding: 10px;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    .footer-left {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .footer-right {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .footer-right ul {
+        justify-content: flex-start;
+    }
+}
