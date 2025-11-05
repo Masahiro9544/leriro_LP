@@ -252,6 +252,26 @@ table thead tr{
     opacity: 1;
 }
 
+/* 利用方法 */
+.use {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.use-left {
+    width: 70%;
+}
+.use-left p {
+    font-size: 0.8rem;
+}
+.use-right {
+    width: 30%;
+}
+.use-right img {
+    width: 100%;
+    height: auto;
+}
+
 /* 会社情報 */
 .contents4-inner1 {
     margin-bottom: 40px;
